@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdulbasit Niazi – Full-Stack Web Developer</title>
+<meta name="description" content="Portfolio of Abdulbasit Niazi, full-stack web developer in Kunduz, Afghanistan. PHP, JavaScript, MySQL, C#, Java.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1d1f22; --panel:#2a2d31; --paper:#f3f5f7; --card:#fff; --text:#1d1f22; --muted:#5b6470;
+  --blue:#0e86e0; --sun:#f5c518; --line:#d8dee4;
+  --display:"Bricolage Grotesque","Vazirmatn",system-ui,sans-serif;
+  --body:"Vazirmatn",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#17181a;--card:#222428;--text:#eef1f4;--muted:#a3adb8;--line:#363a40}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--paper);color:var(--text);line-height:1.7;font-size:1.0625rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1040px;margin-inline:auto;padding-inline:1.25rem}
+
+/* top bar */
+header{position:absolute;inset:0 0 auto 0;z-index:2}
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:1.1rem;color:#fff}
+.logo{font-family:var(--display);font-weight:800;text-decoration:none}
+nav{display:flex;gap:1.25rem;align-items:center;font-size:.95rem}
+nav a{text-decoration:none;opacity:.85}
+nav a:hover{opacity:1}
+#lang{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);border-radius:99px;padding:.2rem .85rem;font:inherit;font-size:.9rem;cursor:pointer}
+#lang:hover{border-color:var(--sun);color:var(--sun)}
+
+/* hero: a browser window */
+.hero{background:var(--ink);color:#fff;padding:6.5rem 0 4.5rem}
+.browser{background:var(--panel);border-radius:14px;overflow:hidden;box-shadow:0 30px 60px -30px #000}
+.bar{display:flex;align-items:center;gap:.5rem;padding:.7rem 1rem;background:#202225;direction:ltr}
+.bar i{width:11px;height:11px;border-radius:50%;background:#555}
+.bar i:nth-child(1){background:#ff5f57}.bar i:nth-child(2){background:var(--sun)}.bar i:nth-child(3){background:#28c840}
+.url{flex:1;margin-inline-start:.75rem;background:#2f3237;border-radius:99px;padding:.25rem 1rem;font-size:.85rem;color:#b8c1cc;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.page{padding:clamp(1.5rem,5vw,3.5rem)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,8vw,5.6rem);line-height:1.02;letter-spacing:-.02em}
+h1 span{color:var(--blue)}
+.lead{max-width:34rem;margin-top:1.25rem;color:#c9d1d9;font-size:1.15rem}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.btn{display:inline-block;padding:.7rem 1.4rem;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid transparent}
+.btn.main{background:var(--sun);color:#1d1f22}
+.btn.main:hover{background:#ffd43b}
+.btn.alt{border-color:rgba(255,255,255,.35);color:#fff}
+.btn.alt:hover{border-color:#fff}
+
+/* sections */
+section{padding:4.5rem 0}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin-bottom:2rem;letter-spacing:-.01em}
+.about{display:grid;gap:2rem;grid-template-columns:1.4fr 1fr;align-items:start}
+.facts{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.25rem 1.5rem;list-style:none;padding-inline-start:1.5rem}
+.facts li{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px solid var(--line)}
+.facts li:last-child{border:0}
+.facts b{color:var(--muted);font-weight:600}
+
+.projects{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.proj .tab{display:flex;gap:.4rem;padding:.6rem .9rem;background:var(--ink);direction:ltr}
+.proj .tab i{width:9px;height:9px;border-radius:50%;background:#555}
+.proj.gold .tab{border-bottom:3px solid var(--sun)}
+.proj.cs .tab{border-bottom:3px solid var(--blue)}
+.proj.fe .tab{border-bottom:3px solid #28c840}
+.proj .body{padding:1.25rem 1.4rem 1.5rem}
+.proj h3{font-family:var(--display);font-size:1.3rem;line-height:1.25;margin-bottom:.5rem}
+.proj p{color:var(--muted);font-size:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem;direction:ltr}
+.tags em{font-style:normal;font-size:.85rem;padding:.1rem .65rem;border:1px solid var(--line);border-radius:99px}
+
+.skills{display:grid;gap:1.25rem 2rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.skills h3{font-family:var(--display);font-size:1.1rem;margin-bottom:.6rem;padding-bottom:.5rem;border-bottom:3px solid var(--blue)}
+.skills ul{list-style:none;padding:0}
+.skills li{padding:.2rem 0}
+.skills .tech{display:flex;flex-wrap:wrap;gap:.5rem;direction:ltr}
+.skills .tech span{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.2rem .8rem;font-weight:600;font-size:.95rem}
+
+.contact{background:var(--ink);color:#fff;text-align:start}
+.contact h2{margin-bottom:1rem}
+.contact p{color:#c9d1d9;max-width:32rem}
+.phone{font-family:var(--display);font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;direction:ltr;unicode-bidi:isolate;margin:1.25rem 0;display:block;text-align:start}
+footer{background:var(--ink);color:#8d97a3;padding:1.5rem 0;font-size:.9rem;border-top:1px solid #33373c}
+
+[dir=rtl] .about{grid-template-columns:1.4fr 1fr}
+@media (max-width:760px){
+  .about{grid-template-columns:1fr}
+  nav a.hide{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">A. Niazi</a>
+    <nav>
+      <a class="hide" href="#work" data-en="Projects" data-fa="پروژه‌ها">Projects</a>
+      <a class="hide" href="#skills" data-en="Skills" data-fa="مهارت‌ها">Skills</a>
+      <a class="hide" href="#contact" data-en="Contact" data-fa="تماس">Contact</a>
+      <button id="lang" type="button" aria-label="Switch language">فارسی</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i><div class="url">https://abdulbasit-niazi.dev</div></div>
+        <div class="page">
+          <h1><span data-en="Abdulbasit" data-fa="عبدالباسط">Abdulbasit</span><br><span style="color:#fff" data-en="Niazi" data-fa="نیازی">Niazi</span></h1>
+          <p class="lead" data-en="Full-stack web developer in Kunduz. I build websites and business software with PHP, JavaScript and MySQL, and I teach web design." data-fa="فول‌ستاک ویب دیولپر در کندز. وب‌سایت و نرم‌افزارهای تجاری را با PHP، جاوااسکریپت و MySQL می‌سازم و طراحی وب آموزش می‌دهم.">Full-stack web developer in Kunduz. I build websites and business software with PHP, JavaScript and MySQL, and I teach web design.</p>
+          <div class="cta">
+            <a class="btn main" href="#work" data-en="See my projects" data-fa="دیدن پروژه‌ها">See my projects</a>
+            <a class="btn alt" href="https://wa.me/93786523497" target="_blank" rel="noopener" data-en="Message on WhatsApp" data-fa="پیام در واتساپ">Message on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <h2 data-en="Software that fits how people actually work" data-fa="نرم‌افزاری که با کار واقعی مردم جور است">Software that fits how people actually work</h2>
+        <p data-en="I design databases, build the forms and reports on top of them, and debug until the numbers match. My work covers shop management systems, web-based management systems and responsive front-end pages." data-fa="پایگاه داده طراحی می‌کنم، فرم‌ها و گزارش‌ها را روی آن می‌سازم و اشکال‌زدایی می‌کنم تا همه چیز درست کار کند. کارهایم شامل سیستم مدیریت دکان، سیستم‌های مدیریتی تحت وب و صفحات واکنش‌گرای فرانت‌اند است.">I design databases, build the forms and reports on top of them, and debug until the numbers match. My work covers shop management systems, web-based management systems and responsive front-end pages.</p>
+      </div>
+      <ul class="facts">
+        <li><b data-en="Role" data-fa="تخصص">Role</b><span data-en="Full-stack developer" data-fa="فول‌ستاک دیولپر">Full-stack developer</span></li>
+        <li><b data-en="Based in" data-fa="محل">Based in</b><span data-en="Kunduz, Afghanistan" data-fa="کندز، افغانستان">Kunduz, Afghanistan</span></li>
+        <li><b data-en="Languages" data-fa="زبان‌ها">Languages</b><span data-en="English (good)" data-fa="انگلیسی (خوب)">English (good)</span></li>
+        <li><b data-en="Also" data-fa="همچنین">Also</b><span data-en="Course instructor" data-fa="مدرس دوره">Course instructor</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="work" style="padding-top:0">
+    <div class="wrap">
+      <h2 data-en="Projects" data-fa="پروژه‌ها">Projects</h2>
+      <div class="projects">
+        <article class="proj gold">
+          <div class="tab"><i></i><i></i><i></i></div>
+          <div class="body">
+            <h3 data-en="Gold Shop Management System" data-fa="سیستم مدیریت دکان طلافروشی">Gold Shop Management System</h3>
+            <p data-en="A desktop application for a gold shop: stock, sales, customers and printed reports, backed by a database with full CRUD." data-fa="یک برنامه دسکتاپ برای طلافروشی: موجودی، فروش، مشتریان و گزارش‌های چاپی، با پایگاه داده و عملیات کامل CRUD.">A desktop application for a gold shop: stock, sales, customers and printed reports, backed by a database with full CRUD.</p>
+            <div class="tags"><em>Java</em><em>SQLite</em></div>
+          </div>
+        </article>
+        <article class="proj cs">
+          <div class="tab"><i></i><i></i><i></i></div>
+          <div class="body">
+            <h3 data-en="Web-Based Computer Science Management System" data-fa="سیستم مدیریت کمپیوتر ساینس تحت وب">Web-Based Computer Science Management System</h3>
+            <p data-en="A browser-based system for managing records, forms and reports, with a MySQL database behind a PHP back end." data-fa="یک سیستم تحت وب برای مدیریت اطلاعات، فرم‌ها و گزارش‌ها، با پایگاه داده MySQL و بک‌اند PHP.">A browser-based system for managing records, forms and reports, with a MySQL database behind a PHP back end.</p>
+            <div class="tags"><em>PHP</em><em>MySQL</em><em>Bootstrap</em><em>jQuery</em></div>
+          </div>
+        </article>
+        <article class="proj fe">
+          <div class="tab"><i></i><i></i><i></i></div>
+          <div class="body">
+            <h3 data-en="7 Front-End Projects" data-fa="۷ پروژه فرانت‌اند">7 Front-End Projects</h3>
+            <p data-en="Seven responsive pages and interfaces built to practise layout, interaction and clean code." data-fa="هفت صفحه و رابط واکنش‌گرا برای تمرین طراحی صفحه، تعامل و کد تمیز.">Seven responsive pages and interfaces built to practise layout, interaction and clean code.</p>
+            <div class="tags"><em>HTML5</em><em>CSS3</em><em>JavaScript</em><em>Bootstrap</em></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" style="padding-top:0">
+    <div class="wrap">
+      <h2 data-en="Skills" data-fa="مهارت‌ها">Skills</h2>
+      <div class="skills">
+        <div>
+          <h3 data-en="Programming languages" data-fa="زبان‌های برنامه‌نویسی">Programming languages</h3>
+          <div class="tech"><span>Java</span><span>C#</span><span>VB.NET</span><span>JavaScript</span><span>PHP</span></div>
+        </div>
+        <div>
+          <h3 data-en="Web" data-fa="وب">Web</h3>
+          <div class="tech"><span>HTML5</span><span>CSS3</span><span>Bootstrap</span><span>jQuery</span></div>
+        </div>
+        <div>
+          <h3 data-en="Databases" data-fa="پایگاه داده">Databases</h3>
+          <div class="tech"><span>MySQL</span><span>SQLite</span></div>
+        </div>
+        <div>
+          <h3 data-en="Software development" data-fa="توسعه نرم‌افزار">Software development</h3>
+          <ul>
+            <li data-en="Object-oriented programming" data-fa="برنامه‌نویسی شیءگرا">Object-oriented programming</li>
+            <li data-en="CRUD operations" data-fa="عملیات CRUD">CRUD operations</li>
+            <li data-en="Database integration" data-fa="اتصال به پایگاه داده">Database integration</li>
+            <li data-en="Form-based applications" data-fa="برنامه‌های مبتنی بر فرم">Form-based applications</li>
+            <li data-en="Reporting and debugging" data-fa="گزارش‌گیری و اشکال‌زدایی">Reporting and debugging</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-en="Other" data-fa="سایر">Other</h3>
+          <ul>
+            <li data-en="Computer literacy" data-fa="دانش کمپیوتر">Computer literacy</li>
+            <li data-en="Internet research" data-fa="تحقیق در انترنت">Internet research</li>
+            <li data-en="Documentation" data-fa="مستندسازی">Documentation</li>
+            <li data-en="Data entry" data-fa="ورود اطلاعات">Data entry</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2 data-en="Need a website or a system built?" data-fa="وب‌سایت یا سیستم نیاز دارید؟">Need a website or a system built?</h2>
+      <p data-en="Send a message on WhatsApp with what you need. I'll reply with a plan and a price." data-fa="نیاز خود را در واتساپ برایم بنویسید. با یک پلان و قیمت جواب می‌دهم.">Send a message on WhatsApp with what you need. I'll reply with a plan and a price.</p>
+      <span class="phone">0786523497</span>
+      <a class="btn main" href="https://wa.me/93786523497" target="_blank" rel="noopener" data-en="Open WhatsApp" data-fa="باز کردن واتساپ">Open WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> <span data-en="Abdulbasit Niazi · Kunduz, Afghanistan" data-fa="عبدالباسط نیازی - کندز، افغانستان">Abdulbasit Niazi · Kunduz, Afghanistan</span></div>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('[data-en]'), btn=document.getElementById('lang'), lang='en';
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  try{ if(localStorage.getItem('lang')==='fa') set('fa'); }catch(e){}
+  function set(l){
+    lang=l;
+    document.documentElement.lang=l;
+    document.documentElement.dir=l==='fa'?'rtl':'ltr';
+    els.forEach(function(el){ el.textContent=el.getAttribute('data-'+l); });
+    btn.textContent=l==='fa'?'English':'فارسی';
+    document.title=l==='fa'?'عبدالباسط نیازی – فول‌ستاک ویب دیولپر':'Abdulbasit Niazi – Full-Stack Web Developer';
+    try{ localStorage.setItem('lang',l); }catch(e){}
+  }
+  btn.addEventListener('click',function(){ set(lang==='en'?'fa':'en'); });
+})();
+</script>
+</body>
+</html>
